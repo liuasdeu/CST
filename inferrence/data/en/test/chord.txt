@@ -1,0 +1,10 @@
+C: C: E:m7 C: C: C: D:m7 G: E:m D:m D:m C: C: C: C: C: D:m7 D:m7 E:m E:m7 D:m E:m7 E:m7 A:m A:m A:m A:m
+A:m A:m E:m7 D: D: E:m7 G: B: C: C: F#:m7b5 B: B: A:m A:m A:m A:m D:7 G: E:m A:m E:m7 G:
+E:m7 E:m7 E:m7 E:m7 C: G:7 C: C: G: F:maj7 F: C: C: E:m7 E:m7 D:m7 C: E:m7 E:m7 C: G:7 C: F:maj7 D:m7 G:7 C: C: C: C: C: D:m7 C: C: C: D:m7 C: C: G: D:m7 C: E:m7 E:m7 E:m7 C: E:m7 E:m7 E:m7 C: F:maj7 F:maj7 F:maj7 G: F:maj7 F:maj7 C: C: C: C: G: C: C: C: D:m7
+C: C: C: G: D:m7 C: E:m7 E:m7 E:m7 C: E:m7 E:m7 E:m7 C: E:m7 E:m7 E:m7 C: E:m7 E:m7 C: C: C: C: C: E:m7 C: C: C: E:m7 C: C: D:m
+E:m E:m B:m7b5 E:m E:m B:m7b5 E:m E:m B:m7b5 A:m7 E:m A:m7 C: A:m7 E:m E:m D:m D:m C:
+E:m E:m B:m7b5 E:m E:m E:m E:m E:m B:m7b5 A:m7 E:m E:m B:m7b5 C: F: B:m7b5 B:m7b5 D:m A:m7 E:m B:m7b5 A:m7 E:m B:m7b5 A:m7 E:m D:m E:m E:m C:maj7 A:m7 E:m E:m D:m D:m C: A:m7 C:
+E:m7 E:m7 E:m7 G: G: G: E:m7 G: G: A:7 C#:dim E:m7 E:m7 G: G: E:m G: B:m7 B:m7 C#:dim G: C: C: E:m7 G: G: E:m7 F#:m F#:m C#:dim E:m7 G: G: B:m7 E:m7 D:
+C: C: G: G: C: D:m C: C: C: C: D:m D:m7 F: D:m D:m F: F: E:m7 C: C: C: C: E:m7 D:m7 C: C: E:m7 D:m7 C: C: E:m7 D:m7 E:m E:m E:m E:m E:m E:m E:m E:m D:m C: C: C: D:m
+C:dim C:dim C#: F:m7 F:m7 F:m7 F:m7 F:m7 F:m7 C:dim F:m7 F:m7 F:m7 F:m7 F:m C#:maj7 Ab: F:m7 C:dim F:m7 F:m7 F:m7 C:dim F:m7 F:m7
+C: C: E:m E:m E:m E:m E:m E:m E:m7 D:m7 C: C: E:m7 D:m7 C: C: E:m7 D:m7 C:maj7 E:m E:m E:m E:m E:m E:m7 D:m7 C: C: C: C: C: E:m E:m A:m D:m D:m7 F: D:m D:m F: D:m E:m7 C: C: C: C: E:m7 D:m7 C:
