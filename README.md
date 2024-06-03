@@ -20,7 +20,7 @@ The innovations proposed in this paper are implemented through a local installat
     </code>
   </pre>
 </div>
-Fairseq can be downloaded from here.[Click here](https://drive.google.com/drive/folders/1of0Jdh0z3uALvSTtBUq6Ub5ulEnS5xkI?usp=drive_link)
+Fairseq can be downloaded from here.(https://drive.google.com/drive/folders/1of0Jdh0z3uALvSTtBUq6Ub5ulEnS5xkI?usp=drive_link)
 
 ### 2. Dataset Download
 Navigate to the train/template2melody directory and download the lmd_full MIDI dataset into this folder:
@@ -72,7 +72,7 @@ After this step, checkpoints and logs folders will appear in the train/template2
 Navigate to the chat directory.
 #### (1) Model Preparation
 Save the checkpoints in checkpoints/{model_prefix}. This should include the Chinese and English models for lyrics-rhythm, and the template-melody model trained with our innovations. Save the dictionaries in data-bin/{model_prefix}. Dictionary data is provided in data-bin.
-Download the model checkpoints here.[Click here](https://drive.google.com/drive/folders/1mNGQuINnx_GHHGd3vrjRZq8vNoxjgSif?usp=drive_link)
+Download the model checkpoints here.(https://drive.google.com/drive/folders/1mNGQuINnx_GHHGd3vrjRZq8vNoxjgSif?usp=drive_link)
 #### (2) Theme-to-Melody Generation
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
   <pre>
@@ -90,7 +90,7 @@ Navigate to the inference directory.
 Prepare word-level (EN) or character-level (ZH) lyrics in data/{lang}/{data_prefix}/lyrics.txt, and chord progressions in data/{lang}/{data_prefix}/chord.txt. For English lyrics, also prepare syllable-level lyrics in data/en/{data_prefix}/syllable.txt as input for the lyrics-rhythm model. Examples are provided in data/en/test/ and data/zh/test/.
 #### (2) Model Preparation
 Save the checkpoints in checkpoints/{model_prefix}, including the Chinese and English models for lyrics-rhythm and the template-melody model trained with our innovations. Save the dictionaries in data-bin/{model_prefix}. Dictionary data is provided in data-bin.
-Download the model checkpoints here.[Click here](https://drive.google.com/drive/folders/1mNGQuINnx_GHHGd3vrjRZq8vNoxjgSif?usp=drive_link)
+Download the model checkpoints here.(https://drive.google.com/drive/folders/1mNGQuINnx_GHHGd3vrjRZq8vNoxjgSif?usp=drive_link)
 #### (3) Lyric-to-Melody Generation
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
   <pre>
