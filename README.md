@@ -21,6 +21,7 @@ The innovations proposed in this paper are implemented through a local installat
   </pre>
 </div>
 Fairseq can be downloaded from here.
+
 ### 2. Dataset Download
 Navigate to the train/template2melody directory and download the lmd_full MIDI dataset into this folder:
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
@@ -30,6 +31,7 @@ Navigate to the train/template2melody directory and download the lmd_full MIDI d
     </code>
   </pre>
 </div>
+
 ### 3. Data Preparation
 Generate and align the data:
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
@@ -42,6 +44,7 @@ Generate and align the data:
   </pre>
 </div>
 After this step, a data folder will appear in the train/template2melody directory.
+
 ### 4. Data Binarization
 Convert the data to binary format:
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
@@ -53,6 +56,7 @@ Convert the data to binary format:
   </pre>
 </div>
 After this step, a data-bin folder will appear in the train/template2melody directory.
+
 ### 5. Model Training
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
   <pre>
@@ -64,6 +68,7 @@ After this step, a data-bin folder will appear in the train/template2melody dire
 </div>
 After this step, checkpoints and logs folders will appear in the train/template2melody directory. We also provide pre-trained models and dictionary files.
  Download the model checkpoints here.
+ 
 ### 6. Theme-to-Melody
 Navigate to the chat directory.
 #### (1) Model Preparation
@@ -79,6 +84,7 @@ Download the model checkpoints here.
   </pre>
 </div>
 After this step, a webpage will appear. Navigate to this page to enter the system, where you can request lyrics generation, followed by melody generation.
+
 ### 7. Lyric-to-Melody
 Navigate to the inference directory.
 #### (1) Data Preparation
@@ -96,6 +102,7 @@ Download the model checkpoints here.
   </pre>
 </div>
 The first line generates melodies from Chinese lyrics, and the second line generates melodies from English lyrics. The generated melodies will be in the results/{lang}/ folder. We provide examples of lyric-to-melody.
+
 ### 8. Melody Evaluation
 Navigate to the evaluation directory.
 #### (1) Calculate similarity:
