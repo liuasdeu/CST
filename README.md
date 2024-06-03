@@ -114,6 +114,7 @@ Navigate to the evaluation directory.
     </code>
   </pre>
 </div>
+
 #### (2) Calculate pitch diversity:
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
   <pre>
@@ -122,6 +123,7 @@ Navigate to the evaluation directory.
     </code>
   </pre>
 </div>
+
 #### (3) Calculate inter-onset intervals (IOIs):
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
   <pre>
