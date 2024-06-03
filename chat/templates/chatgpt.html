@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ChatGPT 3.5 Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #answer {
+      margin-bottom: 20px;
+    }
+
+    #downloadContainer {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ChatGPT 3.5 Demo</h1>
+  <p>您可以在本网站上进行歌词和旋律的生成。您可以输入自己想要的主题，中英文都可，中文是中文歌词，英文是英文歌词。接下来，输入您想要的和弦进行，点击生成音乐，即可生成对应歌词的旋律。您可以点击下载按钮下载生成的旋律。当您对生成的歌词感到不满意的情况下，可以重新生成。对生成的音乐旋律不满意时，仍可重新点击生成音乐。</p>
+
+  <h2>请输入您的要求主题：</h2>
+  <textarea id="inputText" rows="4" cols="50"></textarea>
+  <br>
+  <button onclick="sendRequest()">发送请求</button>
+
+  <h2>回答：</h2>
+  <div id="answer"></div>
+  <br>
+  <button onclick="rateSatisfaction(true)">满意</button>
+  <button onclick="rateSatisfaction(false)">不满意</button>
+
+  <h2>请输入您的和弦：</h2>
+  <textarea id="chordsInput" rows="4" cols="50"></textarea>
+  <br>
+  <button onclick="generateMusic()">生成音乐</button>
+
+  <h2>生成的音乐：</h2>
+  <div id="downloadContainer"></div>
+
+  <script>
+    var currentAnswer = '';
+
+    function sendRequest() {
+      var userInput = document.getElementById("inputText").value;
+
+      fetch('/get_answer', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ input: userInput }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          currentAnswer = data.answer;
+          document.getElementById("answer").innerText = currentAnswer;
+        });
+    }
+
+    function rateSatisfaction(satisfied) {
+      if (!currentAnswer) {
+        alert("请先获取回答！");
+        return;
+      }
+
+      if (!satisfied) {
+        var userInput = prompt("请重新输入您的要求主题：");
+        if (!userInput) {
+          return;
+        }
+
+        fetch('/update_answer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ answer: currentAnswer, input: userInput }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            currentAnswer = data.updatedAnswer;
+            document.getElementById("answer").innerText = currentAnswer;
+          });
+      }
+    }
+
+    function generateMusic() {
+      var chordsInput = document.getElementById("chordsInput").value;
+
+      fetch('/generate_music', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ chords: chordsInput }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Error generating music');
+          }
+        })
+        .then((data) => {
+          var downloadButton = document.createElement('button');
+          downloadButton.textContent = 'Download Music';
+          downloadButton.addEventListener('click', function() {
+            window.location.href = data.download_link;
+          });
+
+          var container = document.getElementById("downloadContainer");
+          container.innerHTML = ''; // 清空容器内容
+          container.appendChild(downloadButton);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>ChatGPT 3.5 Demo</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--  <h1>请输入您的要求主题：</h1>-->
+<!--  <textarea id="inputText" rows="4" cols="50"></textarea>-->
+<!--  <br>-->
+<!--  <button onclick="sendRequest()">发送请求</button>-->
+<!--  <br><br>-->
+<!--  <h2>回答：</h2>-->
+<!--  <div id="answer"></div>-->
+<!--  <br>-->
+<!--  <button onclick="rateSatisfaction(true)">满意</button>-->
+<!--  <button onclick="rateSatisfaction(false)">不满意</button>-->
+<!--  <br><br>-->
+<!--  <h2>请输入您的和弦：</h2>-->
+<!--  <textarea id="chordsInput" rows="4" cols="50"></textarea>-->
+<!--  <br>-->
+<!--  <button onclick="generateMusic()">生成音乐</button>-->
+<!--  <br><br>-->
+<!--  <h2>生成的音乐：</h2>-->
+<!--  <audio id="musicPlayer" controls></audio>-->
+<!--  <div id="downloadContainer"></div>-->
+
+<!--  <script>-->
+<!--    var currentAnswer = '';-->
+
+<!--    function sendRequest() {-->
+<!--      var userInput = document.getElementById("inputText").value;-->
+
+<!--      fetch('/get_answer', {-->
+<!--        method: 'POST',-->
+<!--        headers: {-->
+<!--          'Content-Type': 'application/json',-->
+<!--        },-->
+<!--        body: JSON.stringify({ input: userInput }),-->
+<!--      })-->
+<!--        .then((response) => response.json())-->
+<!--        .then((data) => {-->
+<!--          currentAnswer = data.answer;-->
+<!--          document.getElementById("answer").innerText = currentAnswer;-->
+<!--        });-->
+<!--    }-->
+
+<!--    function rateSatisfaction(satisfied) {-->
+<!--      if (!currentAnswer) {-->
+<!--        alert("请先获取回答！");-->
+<!--        return;-->
+<!--      }-->
+
+<!--      if (!satisfied) {-->
+<!--        var userInput = prompt("请重新输入您的要求主题：");-->
+<!--        if (!userInput) {-->
+<!--          return;-->
+<!--        }-->
+
+<!--        fetch('/update_answer', {-->
+<!--          method: 'POST',-->
+<!--          headers: {-->
+<!--            'Content-Type': 'application/json',-->
+<!--          },-->
+<!--          body: JSON.stringify({ answer: currentAnswer, input: userInput }),-->
+<!--        })-->
+<!--          .then((response) => response.json())-->
+<!--          .then((data) => {-->
+<!--            currentAnswer = data.updatedAnswer;-->
+<!--            document.getElementById("answer").innerText = currentAnswer;-->
+<!--          });-->
+<!--      }-->
+<!--    }-->
+
+<!--    function generateMusic() {-->
+<!--      var chordsInput = document.getElementById("chordsInput").value;-->
+
+<!--      fetch('/generate_music', {-->
+<!--        method: 'POST',-->
+<!--        headers: {-->
+<!--          'Content-Type': 'application/json',-->
+<!--        },-->
+<!--        body: JSON.stringify({ chords: chordsInput }),-->
+<!--      })-->
+<!--        .then((response) => {-->
+<!--          if (response.ok) {-->
+<!--            return response.json();-->
+<!--          } else {-->
+<!--            throw new Error('Error generating music');-->
+<!--          }-->
+<!--        })-->
+<!--        .then((data) => {-->
+<!--          var downloadButton = document.createElement('button');-->
+<!--          downloadButton.textContent = 'Download Music';-->
+<!--          downloadButton.addEventListener('click', function() {-->
+<!--            window.location.href = data.download_link;-->
+<!--          });-->
+
+<!--          var container = document.getElementById("downloadContainer");-->
+<!--          container.innerHTML = ''; // 清空容器内容-->
+<!--          container.appendChild(downloadButton);-->
+<!--        })-->
+<!--        .catch((error) => {-->
+<!--          console.error('Error:', error);-->
+<!--        });-->
+<!--    }-->
+<!--  </script>-->
+<!--</body>-->
+<!--</html>-->
