@@ -115,7 +115,7 @@ Navigate to the evaluation directory.
   </pre>
 </div>
 
-#### (2) Calculate pitch diversity:
+#### (2) Calculate diversity:
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
   <pre>
     <code>
