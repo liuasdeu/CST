@@ -3,14 +3,6 @@ This new method generates melodies from lyrics, enhancing the quality of lyric-m
 1. Lyrics usually need to be specified by the user in advance, greatly limiting user convenience.
 2. The generated melodies often lack distinct structure, with the chorus, which is key to conveying musical emotion, often being neglected.
 ### 1. Environment Setup
-Install the required packages:
-<div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
-  <pre>
-    <code>
-      pip install -r requirements.txt
-    </code>
-  </pre>
-</div>
 The innovations proposed in this paper are implemented through a local installation of Fairseq. Therefore, it is recommended to proceed with the local installation of Fairseq:
 <div style="background-color: #f1f1f1; padding: 10px; font-size: 1em;">
   <pre>
